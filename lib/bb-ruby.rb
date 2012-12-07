@@ -46,7 +46,7 @@ module BBRuby
       :insert],
     'Code (with language)' => [
       /\[code=(?:&quot;)?(.*?)(?:&quot;)?\](.*?)\[\/code\]/mi,
-      '<code class="language-\1">\2</a>',
+      '</pre><code class="language-\1">\2</code></pre>',
       'Code Text with language specified',
       '[code=ruby]some code[/code]',
       :code],
