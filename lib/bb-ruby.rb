@@ -44,9 +44,15 @@ module BBRuby
       'Inserted Text',
       '[ins]inserted text[/del]',
       :insert],
+    'Code (with language)' => [
+      /\[code=(?:&quot;)?(.*?)(?:&quot;)?\](.*?)\[\/code\]/mi,
+      '<code class="language-\1">\2</a>',
+      'Code Text with language specified',
+      '[code=ruby]some code[/code]',
+      :code],
     'Code' => [
       /\[code(:.+)?\](.*?)\[\/code\1?\]/mi,
-      '<code>\2</code>',
+      '<pre><code>\2</code></pre>',
       'Code Text',
       '[code]some code[/code]',
       :code],
